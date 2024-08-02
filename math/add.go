@@ -1,11 +1,18 @@
 // Package math provides an interface for mathematical equations
 package math
 
-// Add takes two numbers and returns the sum
+import "golang.org/x/exp/constraints"
+
+// A Number is any signed or unsigned integer or float
+type Number interface {
+	constraints.Integer | constraints.Float
+}
+
+// Add takes two Numbers and returns the sum
 //
 // For more information about [addition]
 //
 // [addition]: https://mathisfun.com/numbers/addition.html
-func Add(a int, b int) int {
+func Add[T Number](a T, b T) T {
 	return a + b
 }
