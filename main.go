@@ -7,5 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Println(math.Add(1,1))
+	fmt.Println(math.Add(1,2))
 }
